@@ -1,7 +1,11 @@
+import React from "react";
+import { GlobalAllmStyles } from "./assets/styles/global.styles";
+
 function App() {
   return (
     <>
-      I'm allm!
+      <GlobalAllmStyles />
+      <h1 className="text-3xl font-bold underline">Hello world!</h1>
     </>
   );
 }
