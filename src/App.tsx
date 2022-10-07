@@ -1,5 +1,6 @@
-import React from "react";
-import { GlobalAllmStyles } from "./assets/styles/global.styles";
+import React from 'react';
+
+import { GlobalAllmStyles } from './assets/styles/global.styles';
 
 function App() {
   return (
