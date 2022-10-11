@@ -16,11 +16,17 @@ import {
   setDoc
 } from 'firebase/firestore';
 
-import {
-  TUserData,
-  TAdditionalInfo
-} from './firebase.types';
 import { getEnvVariable } from '../application.helpers';
+
+export type TAdditionalInfo = {
+  displayName?: string;
+}
+
+export type TUserData = {
+  displayName: string;
+  email: string;
+  createdAt: Date;
+}
 
 initializeApp({
   apiKey: getEnvVariable('REACT_APP_FIREBASE_API_KEY'),
