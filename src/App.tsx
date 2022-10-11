@@ -1,13 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { Routes, Route } from 'react-router-dom';
 
-import { GlobalAllmStyles } from './assets/styles/global.styles';
+import { checkUserSession } from './store/user/user.action';
+
+import Authentication from './routes/authentication/authentication.component';
+import Dashboard from './routes/dashboard/dashboard.component';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(checkUserSession());
+  }, []);
+
   return (
-    <>
-      <GlobalAllmStyles />
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-    </>
+    <Routes>
+      <Route path='/' element={<Dashboard />} />
+      <Route path='auth' element={<Authentication />} />
+    </Routes>
   );
 }
 
