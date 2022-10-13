@@ -16,7 +16,7 @@ import {
   setDoc
 } from 'firebase/firestore';
 
-import { getEnvVariable } from '../application.helpers';
+import { getEnvVariable } from '../../helpers/application.helpers';
 
 export type TAdditionalInfo = {
   displayName?: string;

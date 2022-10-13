@@ -4,8 +4,11 @@ import { Routes, Route } from 'react-router-dom';
 
 import { checkUserSession } from './store/user/user.action';
 
+import Layout from './components/layout/layout.component';
+import ProtectedRoute from './components/router/protected-route.component';
 import Authentication from './routes/authentication/authentication.component';
 import Dashboard from './routes/dashboard/dashboard.component';
+import NotFound from './routes/not-found/not-found.component';
 
 function App() {
   const dispatch = useDispatch();
@@ -16,8 +19,13 @@ function App() {
 
   return (
     <Routes>
-      <Route path='/' element={<Dashboard />} />
-      <Route path='auth' element={<Authentication />} />
+      <Route path="/" element={<Layout /> }>
+        <Route element={<ProtectedRoute />}>
+          <Route index element={<Dashboard />} />
+        </Route>
+        <Route path="auth" element={<Authentication />} />
+      </Route>
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }
