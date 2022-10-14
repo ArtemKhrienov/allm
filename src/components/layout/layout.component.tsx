@@ -1,15 +1,11 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 
-import {
-  Container
-} from './layout.styles';
-
 const Layout = () => {
   return (
-    <Container>
+    <div className="w-full h-full font-sans text-stone-900 antialiased">
       <Outlet />
-    </Container>
+    </div>
   );
 }
 
