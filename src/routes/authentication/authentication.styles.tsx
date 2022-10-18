@@ -1,10 +1,23 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
-import bg from '../../assets/images/bg.jpeg';
+const gradient = keyframes`
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+`
 
-export const Container = styled.div`
-  background-image: url(${bg});
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+export const GradientBackground = styled.div.attrs({
+  className: 'w-full h-full'
+})`
+  position: absolute;
+  background: linear-gradient(-45deg, #0ea5e9, #16a34a, #1f9ded, #23d5ab);
+  background-size: 400% 400%;
+  animation: ${gradient} 15s ease infinite;
+  z-index: -100;
 `

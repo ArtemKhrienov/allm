@@ -1,35 +1,31 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 
 import Button from '../../controls/button/button.component';
-import Separator from '../../separator/separator.component';
-
 import { BUTTON_TYPE_CLASSES } from '../../controls/button/button.component';
+
+import { googleSignInStart } from '../../../store/user/user.action';
 
 import { ReactComponent as GoogleLogo } from '../../../assets/images/buttons/google-icon.svg';
 
 const SignInForm = () => {
+  const dispatch = useDispatch();
+
+  const signInWithGoogle = async () => {
+    dispatch(googleSignInStart());
+  }
+
   return (
-    <div className="bg-white flex p-10 justify-center items-center rounded shadow w-full">
-      <div className="md:w-[25rem]">
-        <form className="w-full ">
-          <div className="text-center mb-7">
-            <h1 className="text-gray-700 text-2xl font-bold mb-2">
-              Sign In
-            </h1>
-            <div className="text-gray-400 font-medium text-sm">
-              Authenticate with social campaigns
-            </div>
-          </div>
-          <div className="flex flex-row">
-            <div className="basis-full">
-              <Button buttonType={BUTTON_TYPE_CLASSES.white}>
-                <GoogleLogo className="mr-3" height="15" width="15" />
-                <span className="font-medium">Sign in with Google</span>
-              </Button>
-            </div>
-          </div>
-          <Separator text="Or with email" />
-        </form>
+    <div className="flex flex-row w-full">
+      <div className="basis-full">
+        <Button
+          type="button"
+          buttonType={BUTTON_TYPE_CLASSES.white}
+          onClick={signInWithGoogle}
+        >
+          <GoogleLogo className="mr-2 md:mr-3" height="15" width="15" />
+          <span className="font-medium">Sign in with Google</span>
+        </Button>
       </div>
     </div>
   );
