@@ -1,19 +1,19 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
+import React from "react";
+import { useDispatch } from "react-redux";
 
-import Button from '../../controls/button/button.component';
-import { BUTTON_TYPE_CLASSES } from '../../controls/button/button.component';
+import Button from "../../controls/button/button.component";
+import { BUTTON_TYPE_CLASSES } from "../../controls/button/button.component";
 
-import { googleSignInStart } from '../../../store/user/user.action';
+import { googleSignInStart } from "../../../store/user/user.action";
 
-import { ReactComponent as GoogleLogo } from '../../../assets/images/buttons/google-icon.svg';
+import { ReactComponent as GoogleLogo } from "../../../assets/images/buttons/google-icon.svg";
 
 const SignInForm = () => {
   const dispatch = useDispatch();
 
   const signInWithGoogle = async () => {
     dispatch(googleSignInStart());
-  }
+  };
 
   return (
     <div className="flex flex-row w-full">
@@ -29,6 +29,6 @@ const SignInForm = () => {
       </div>
     </div>
   );
-}
+};
 
 export default SignInForm;

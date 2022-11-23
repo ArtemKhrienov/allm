@@ -1,35 +1,35 @@
-import { User } from 'firebase/auth';
-import {
-  all,
-  call,
-  put,
-  takeLatest
-} from 'typed-redux-saga/macro';
+import { User } from "firebase/auth";
+import { all, call, put, takeLatest } from "typed-redux-saga/macro";
 
-import { USER_ACTION_TYPES } from './user.types';
-
+import { USER_ACTION_TYPES } from "./user.types";
 import {
   signInSuccess,
   signInFailed,
   signOutSuccess,
-  signOutFailed
-} from './user.action';
+  signOutFailed,
+} from "./user.action";
 import {
   getCurrentUser,
   createUserDocFromAuth,
   signInWithGooglePopup,
   signOutUser,
-  TAdditionalInfo
-} from '../../utils/firebase/firebase.utils';
+  TAdditionalInfo,
+} from "../../utils/firebase";
 
 export function* getSnapshotFromUserAuth(
   userAuth: User,
   additionalInfo?: TAdditionalInfo
 ) {
   try {
-    const userSnapshot = yield* call(createUserDocFromAuth, userAuth, additionalInfo);
+    const userSnapshot = yield* call(
+      createUserDocFromAuth,
+      userAuth,
+      additionalInfo
+    );
     if (userSnapshot)
-      yield* put(signInSuccess({ id: userSnapshot.id, ...userSnapshot.data() }));
+      yield* put(
+        signInSuccess({ id: userSnapshot.id, ...userSnapshot.data() })
+      );
   } catch (error) {
     yield* put(signInFailed(error as Error));
   }
@@ -79,6 +79,6 @@ export function* userSaga() {
   yield* all([
     call(onCheckUserSession),
     call(onGoogleSignInStart),
-    call(onSignOutStart)
+    call(onSignOutStart),
   ]);
 }

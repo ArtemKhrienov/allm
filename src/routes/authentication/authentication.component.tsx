@@ -1,14 +1,13 @@
-import React from 'react';
+import React from "react";
 
-import SignInForm from '../../components/forms/sign-in-form/sign-in-form.component';
+import config from "../../config";
 
-import { getEnvVariable } from '../../helpers/application.helpers';
-import welcomeImg from '../../assets/images/welcome.png';
-import logoImg from '../../assets/images/logo.png';
+import SignInForm from "../../components/forms/sign-in-form/sign-in-form.component";
 
-import {
-  GradientBackground
-} from './authentication.styles';
+import welcomeImg from "../../assets/images/welcome.png";
+import logoImg from "../../assets/images/logo.png";
+
+import { GradientBackground } from "./authentication.styles";
 
 const Authentication = () => {
   return (
@@ -20,22 +19,22 @@ const Authentication = () => {
             <img
               className="mx-auto max-w-full w-11 mb-2 md:w-14"
               src={logoImg}
-              alt={getEnvVariable('REACT_APP_TITLE')}
+              alt={config.env.REACT_APP_TITLE}
             />
 
             <div className="text-center mb-7">
               <h1 className="text-gray-700 text-xl font-bold mb-2 md:text-2xl">
-                Welcome to {getEnvVariable('REACT_APP_TITLE')}
+                Welcome to {config.env.REACT_APP_TITLE}
               </h1>
               <div className="text-gray-400 font-medium text-xs md:text-sm">
-                {getEnvVariable('REACT_APP_DESCRIPTION')}
+                {config.env.REACT_APP_DESCRIPTION}
               </div>
             </div>
 
             <img
               className="mx-auto max-w-full w-36 mb-7 md:w-64"
               src={welcomeImg}
-              alt={getEnvVariable('REACT_APP_DESCRIPTION')}
+              alt={config.env.REACT_APP_DESCRIPTION}
             />
 
             <SignInForm />
@@ -44,6 +43,6 @@ const Authentication = () => {
       </div>
     </>
   );
-}
+};
 
 export default Authentication;
