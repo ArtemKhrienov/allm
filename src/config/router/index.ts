@@ -1,10 +1,10 @@
 const ROUTES = {
-  ROOT: "/",
+  ROOT: '/',
   AUTH: {
-    ROOT: "/auth",
+    ROOT: '/auth',
   },
   PROFILE: {
-    ROOT: "/profile",
+    ROOT: '/profile',
   },
 };
 

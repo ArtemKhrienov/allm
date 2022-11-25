@@ -1,4 +1,4 @@
-import { AnyAction } from "redux";
+import { AnyAction } from 'redux';
 
 import {
   signInSuccess,
@@ -7,7 +7,7 @@ import {
   signOutFailed,
   googleSignInStart,
   checkUserSession,
-} from "./user.action";
+} from './user.action';
 
 export type TUserState = {
   readonly currentUser: TUserState | null;

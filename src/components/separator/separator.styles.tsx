@@ -1,15 +1,15 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 type TTextProps = {
   textBgWidth: number;
 };
 
 export const Container = styled.div.attrs({
-  className: "flex items-center justify-center border-b-0 h-0 my-7",
+  className: 'flex items-center justify-center border-b-0 h-0 my-7',
 })`
   ::after,
   ::before {
-    content: " ";
+    content: ' ';
     width: 50%;
     border-bottom: 1px solid #eff2f5;
     box-sizing: border-box;
@@ -25,7 +25,7 @@ export const Container = styled.div.attrs({
 `;
 
 export const Text = styled.span.attrs({
-  className: "font-medium text-center text-xs text-gray-400",
+  className: 'font-medium text-center text-xs text-gray-400',
 })<TTextProps>`
   width: ${({ textBgWidth }) => `${textBgWidth}rem`};
 `;

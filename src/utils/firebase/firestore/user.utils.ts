@@ -1,11 +1,11 @@
-import { User } from "firebase/auth";
+import { User } from 'firebase/auth';
 import {
   getFirestore,
   QueryDocumentSnapshot,
   doc,
   getDoc,
   setDoc,
-} from "firebase/firestore";
+} from 'firebase/firestore';
 
 export type TAdditionalInfo = {
   displayName?: string;
@@ -23,7 +23,7 @@ export const createUserDocFromAuth = async (
   userAuth: User,
   additionalInfo = {} as TAdditionalInfo
 ): Promise<void | QueryDocumentSnapshot<TUserData>> => {
-  const userDocRef = doc(database, "users", userAuth.uid);
+  const userDocRef = doc(database, 'users', userAuth.uid);
   const userSnapshot = await getDoc(userDocRef);
 
   if (!userSnapshot.exists()) {

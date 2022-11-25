@@ -3,14 +3,16 @@ import {
   legacy_createStore as createStore,
   applyMiddleware,
   Middleware,
-} from "redux";
-import { persistStore, persistReducer, PersistConfig } from "redux-persist";
-import storage from "redux-persist/lib/storage";
-import logger from "redux-logger";
-import createSagaMiddleware from "redux-saga";
+} from 'redux';
+import { persistStore, persistReducer, PersistConfig } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+import logger from 'redux-logger';
+import createSagaMiddleware from 'redux-saga';
 
-import { rootReducer } from "./root-reducer";
-import { rootSaga } from "./root-saga";
+import { rootReducer } from './root-reducer';
+import { rootSaga } from './root-saga';
+
+import config from '../config';
 
 export type TRootState = ReturnType<typeof rootReducer>;
 
@@ -25,7 +27,7 @@ type ExtendedPersistConfig = PersistConfig<TRootState> & {
 };
 
 const persistConfig: ExtendedPersistConfig = {
-  key: "root",
+  key: 'root',
   storage,
   whitelist: [],
 };
@@ -35,12 +37,12 @@ const sagaMiddleware = createSagaMiddleware();
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const middlewares = [
-  process.env.NODE_ENV !== "production" && logger,
+  config.env.NODE_ENV !== 'production' && logger,
   sagaMiddleware,
 ].filter((middleware): middleware is Middleware => Boolean(middleware));
 
 const composeEnhancer =
-  (process.env.NODE_ENV !== "production" &&
+  (process.env.NODE_ENV !== 'production' &&
     window &&
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
   compose;

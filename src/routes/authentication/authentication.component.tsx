@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react';
 
-import config from "../../config";
+import config from '../../config';
 
-import SignInForm from "../../components/forms/sign-in-form/sign-in-form.component";
+import SignInForm from '../../components/forms/sign-in-form/sign-in-form.component';
 
-import welcomeImg from "../../assets/images/welcome.png";
-import logoImg from "../../assets/images/logo.png";
+import welcomeImg from '../../assets/images/welcome.png';
+import logoImg from '../../assets/images/logo.png';
 
-import { GradientBackground } from "./authentication.styles";
+import { GradientBackground } from './authentication.styles';
 
 const Authentication = () => {
   return (

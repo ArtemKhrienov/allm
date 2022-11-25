@@ -6,6 +6,9 @@
 /.pnp
 .pnp.js
 
+# extracted locales for translate
+/extracted
+
 # testing
 /coverage
 

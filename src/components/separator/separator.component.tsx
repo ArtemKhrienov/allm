@@ -1,6 +1,6 @@
-import React, { FC } from "react";
+import React, { FC } from 'react';
 
-import { Container, Text } from "./separator.styles";
+import { Container, Text } from './separator.styles';
 
 type TSeparatorProps = {
   text: string;

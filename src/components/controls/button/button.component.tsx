@@ -1,10 +1,10 @@
-import React, { FC, ButtonHTMLAttributes } from "react";
+import React, { FC, ButtonHTMLAttributes } from 'react';
 
-import { BaseButton, WhiteButton } from "./button.styles";
+import { BaseButton, WhiteButton } from './button.styles';
 
 export enum BUTTON_TYPE_CLASSES {
-  base = "base",
-  white = "white",
+  base = 'base',
+  white = 'white',
 }
 
 type TButtonProps = {
@@ -28,7 +28,7 @@ const Button: FC<TButtonProps> = ({
 
   return (
     <CustomButton disabled={isLoading} {...otherProps}>
-      {isLoading ? "Loading..." : children}
+      {isLoading ? 'Loading...' : children}
     </CustomButton>
   );
 };

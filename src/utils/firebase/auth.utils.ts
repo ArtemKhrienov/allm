@@ -6,11 +6,11 @@ import {
   onAuthStateChanged,
   User,
   NextOrObserver,
-} from "firebase/auth";
+} from 'firebase/auth';
 
 const googleAuthProvider = new GoogleAuthProvider();
 
-googleAuthProvider.setCustomParameters({ prompt: "select_account" });
+googleAuthProvider.setCustomParameters({ prompt: 'select_account' });
 
 export const auth = getAuth();
 

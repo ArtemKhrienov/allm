@@ -1,4 +1,4 @@
-import env from "./env.config";
+import env from './env.config';
 
 export default {
   apiKey: env.REACT_APP_FIREBASE_API_KEY,

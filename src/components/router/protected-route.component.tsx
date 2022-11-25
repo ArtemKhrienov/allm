@@ -1,8 +1,8 @@
-import React from "react";
-import { Outlet, Navigate, useLocation } from "react-router-dom";
-import { useSelector } from "react-redux";
+import React from 'react';
+import { Outlet, Navigate, useLocation } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
-import { selectCurrentUser } from "../../store/user/user.selector";
+import { selectCurrentUser } from '../../store/user/user.selector';
 
 const ProtectedRoute = () => {
   const currentUser = useSelector(selectCurrentUser);

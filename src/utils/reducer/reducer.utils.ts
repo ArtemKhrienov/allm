@@ -1,7 +1,7 @@
-import { AnyAction } from "redux";
+import { AnyAction } from 'redux';
 
 export type TMatchable<AC extends () => AnyAction> = AC & {
-  type: ReturnType<AC>["type"];
+  type: ReturnType<AC>['type'];
   match(action: AnyAction): action is ReturnType<AC>;
 };
 

@@ -1,20 +1,20 @@
-import { User } from "firebase/auth";
-import { all, call, put, takeLatest } from "typed-redux-saga/macro";
+import { User } from 'firebase/auth';
+import { all, call, put, takeLatest } from 'typed-redux-saga/macro';
 
-import { USER_ACTION_TYPES } from "./user.types";
+import { USER_ACTION_TYPES } from './user.types';
 import {
   signInSuccess,
   signInFailed,
   signOutSuccess,
   signOutFailed,
-} from "./user.action";
+} from './user.action';
 import {
   getCurrentUser,
   createUserDocFromAuth,
   signInWithGooglePopup,
   signOutUser,
   TAdditionalInfo,
-} from "../../utils/firebase";
+} from '../../utils/firebase';
 
 export function* getSnapshotFromUserAuth(
   userAuth: User,

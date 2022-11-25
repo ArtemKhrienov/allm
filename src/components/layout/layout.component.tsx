@@ -1,10 +1,10 @@
-import React from "react";
-import { Outlet } from "react-router-dom";
-import { useSelector } from "react-redux";
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
-import { selectIsUserLoading } from "../../store/user/user.selector";
+import { selectIsUserLoading } from '../../store/user/user.selector';
 
-import PreLoader from "../pre-loader/pre-loader.component";
+import PreLoader from '../pre-loader/pre-loader.component';
 
 const Layout = () => {
   const isUserLoading = useSelector(selectIsUserLoading);

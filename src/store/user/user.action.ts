@@ -1,11 +1,11 @@
-import { USER_ACTION_TYPES } from "./user.types";
-import { TUserData } from "../../utils/firebase";
+import { USER_ACTION_TYPES } from './user.types';
+import { TUserData } from '../../utils/firebase';
 import {
   createAction,
   TAction,
   TActionWithPayload,
   withMatcher,
-} from "../../utils/reducer/reducer.utils";
+} from '../../utils/reducer/reducer.utils';
 
 export type CheckUserSession = TAction<USER_ACTION_TYPES.CHECK_USER_SESSION>;
 export type SetCurrentUser = TActionWithPayload<

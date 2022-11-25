@@ -1,1 +1,2 @@
-import "./firebase.initializer";
+import './firebase.initializer';
+import './i18n.initializer';
