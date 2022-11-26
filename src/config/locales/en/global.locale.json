@@ -1,0 +1,9 @@
+{
+  "app": {
+    "name": "Allm",
+    "description": {
+      "short": "Just a little helper for the daily development routines.",
+      "full": "Personal management tool which will help you organize and manage your daily work. Just a little helper for the daily development routines."
+    }
+  }
+}
