@@ -3,16 +3,16 @@ import { useDispatch } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
 
 import { checkUserSession } from './store/user/user.action';
-import ROUTES from './config/router';
+import ROUTES from './router';
 
 import PreLoader from './components/pre-loader/pre-loader.component';
 import Layout from './components/layout/layout.component';
-import ProtectedRoute from './components/router/protected-route.component';
-import PublicRoute from './components/router/public-route.component';
-import Authentication from './routes/authentication/authentication.component';
-import Dashboard from './routes/dashboard/dashboard.component';
-import UserProfile from './routes/user-profile/user-profile.component';
-import NotFound from './routes/not-found/not-found.component';
+import ProtectedRoute from './router/components/protected-route.component';
+import PublicRoute from './router/components/public-route.component';
+import Authentication from './pages/authentication/authentication.component';
+import Dashboard from './pages/dashboard/dashboard.component';
+import UserProfile from './pages/user-profile/user-profile.component';
+import NotFound from './pages/not-found/not-found.component';
 
 function App() {
   const dispatch = useDispatch();

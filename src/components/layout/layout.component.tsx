@@ -2,9 +2,9 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-import { selectIsUserLoading } from '../../store/user/user.selector';
+import PreLoader from 'components/pre-loader/pre-loader.component';
 
-import PreLoader from '../pre-loader/pre-loader.component';
+import { selectIsUserLoading } from 'store/user/user.selector';
 
 const Layout = () => {
   const isUserLoading = useSelector(selectIsUserLoading);

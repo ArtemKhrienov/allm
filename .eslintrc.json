@@ -7,7 +7,8 @@
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended",
-        "plugin:@typescript-eslint/recommended"
+        "plugin:@typescript-eslint/recommended",
+        "plugin:storybook/recommended"
     ],
     "overrides": [
         {
@@ -18,6 +19,13 @@
                 "react/prop-types": ["off"],
                 "react/display-name": ["off"],
                 "@typescript-eslint/no-unused-vars": "error"
+            }
+        },
+        {
+            "files": ["*.stories.@(ts|tsx|js|jsx|mjs|cjs)"],
+            "rules": {
+                "storybook/hierarchy-separator": "error",
+                "storybook/default-exports": "off"
             }
         }
     ],
